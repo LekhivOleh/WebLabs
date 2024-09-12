@@ -18,6 +18,10 @@ header ul{
     font-family: 'Avenir', sans-serif;
 }
 
+header li:hover{
+    color:black;
+}
+
 header button{
     border: none;
     border-radius: 50px;

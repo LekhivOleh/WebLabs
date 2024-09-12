@@ -1,8 +1,12 @@
 .herosection{
-    padding: 45px 180px 0;
+    padding: 45px 180px 100px 180px;
     justify-content: space-between;
     display: flex;
     align-items: center;
+    background-image: url("../assets/image1_1.svg");
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    background-position: right 80px bottom -70px ;
 }
 
 .herosection h1{
@@ -41,4 +45,14 @@
     position: absolute;
     left: 570px;
     top: 260px;
+}
+
+.herosection aside{
+    background-image: url("../assets/image1_1.svg");
+    width: 500px;
+    height: 100svh;
+}
+
+.herosection div{
+    width: 50%;
 }

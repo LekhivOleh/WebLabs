@@ -97,3 +97,9 @@
     line-height: 180%;
     letter-spacing: 0.12px;
 }
+
+.bot_footer img{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
