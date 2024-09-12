@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 180px;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 121px;
+}
+
+header ul{
+    column-gap: 40px;
+    color: #4B5D68;
+    font-family: 'Avenir', sans-serif;
+}
+
+header button{
+    border: none;
+    border-radius: 50px;
+    background: #FFF;
+    box-shadow: 0px 5px 5px 0px rgba(75, 93, 104, 0.10);
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    cursor: pointer;
+    font-family: 'Avenir', sans-serif;
+}
