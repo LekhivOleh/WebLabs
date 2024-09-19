@@ -6,18 +6,18 @@
     background-image: url("../assets/image1_1.svg");
     background-repeat: no-repeat;
     background-size: 60% 100%;
-    background-position: right 80px bottom -70px ;
+    background-position: right 5% bottom -70px;
 }
 
 .herosection h1{
     font-family: 'Helvetica', sans-serif;
     color: #212353;
     font-size: 80px;
-    width: 645px;
+    width: 100%;
 }
 .herosection p{
     font-family: 'Avenir', sans-serif;
-    width: 380px;
+    width: 50%;
     font-size: 18px;
 }
 
@@ -31,6 +31,13 @@
     background: #9C69E2;
     color: #ffffff;
     border: none;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        border: 2px solid #9C69E2;
+        background: #FFFFFF;
+        color: #9C69E2;
+        transform: scale(1.05);
+    }
 }
 
 .herosection div{
@@ -56,3 +63,4 @@
 .herosection div{
     width: 50%;
 }
+

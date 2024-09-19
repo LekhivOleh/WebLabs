@@ -2,14 +2,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 35px 180px;
+    padding: 35px 10%;
 }
 
-header nav{
+header #nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 121px;
+    column-gap: 50px;
+    width: 100%;
 }
 
 header ul{
@@ -20,6 +21,8 @@ header ul{
 
 header li:hover{
     color:black;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
 }
 
 header button{
@@ -33,4 +36,94 @@ header button{
     column-gap: 20px;
     cursor: pointer;
     font-family: 'Avenir', sans-serif;
+    color:#212353;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 160%;
+    letter-spacing: 0.08px;
+}
+
+header a img:hover{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
+}
+
+header button:hover{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: perspective(80px);
+    img{
+        transition: all 0.5s ease-in-out;
+        transform: translateX(5px);
+        &:hover{
+            transform: scale(1.1) translateX(5px);
+        }
+    }
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.burger span {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    border-radius: 10%;
+    transition: all 0.6s ease-in-out;
+}
+
+.navigation-mobile {
+    display: none;
+    width: 100%;
+}
+
+.burger-toggle:checked + .burger + .navigation-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    height: auto;
+    > ul{
+        margin: 2% auto;
+        font-size: 40px;
+    }
+}
+
+.burger-toggle:checked + .burger span:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.burger-toggle:checked + .burger span:nth-child(2) {
+    display: none;
+}
+
+.burger-toggle:checked + .burger span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .navigation-mobile {
+        display: none;
+    }
+    .burger-toggle:checked + .burger + .navigation-mobile {
+        display: flex;
+    }
 }

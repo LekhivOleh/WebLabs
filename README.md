@@ -1,8 +1,8 @@
 ## Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 
 ### Виконав: Лехів Олег Романович (ІР-21)
-### Лабораторна робота №1 (Варіант 9)
+### Лабораторна робота №2 (Варіант 9)
 
-#### Simple landing page
+#### Advanced landing
 
-Description: Create a landing page following the given design (Figma).
+Description: Improve a landing page following the given design (same as previous) by adding full responsiveness and some animation.

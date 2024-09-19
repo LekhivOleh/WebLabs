@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>First lab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#"><img src="assets/logo.svg" alt="logo"></a>
-            <ul class="horizontal-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Signup</a></li>
-            </ul>
-        </nav>
+<header id="header">
+    <nav id="nav">
+        <a href=""><img src="assets/logo.svg" alt="logo"></a>
+        <ul class="horizontal-list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Signup</a></li>
+        </ul>
         <button>Request Demo <img src="assets/button_arrow.svg" alt="arrow"></button>
-    </header>
+    </nav>
+    <input type="checkbox" id="burger-toggle" class="burger-toggle">
+    <label for="burger-toggle" class="burger">
+        <span id="line1"></span>
+        <span id="line2"></span>
+        <span id="line3"></span>
+    </label>
+    <nav class="navigation-mobile">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Signup</a></li>
+        </ul>
+    </nav>
+</header>
+    <div id="container"></div>
     <main>
         <section class="herosection">
             <div>
@@ -27,7 +43,7 @@
                     tested for security, so you can store your data here
                     safely but not be afraid of being stolen by others.
                 </p>
-                <button>Learn more</button>
+                <button class="learn_more_button">Learn more</button>
             </div>
         </section>
         <section class="infosection">
@@ -60,9 +76,8 @@
                             provides a search engine, which is useful for making it
                             easier to find data effectively saving time.
                         </p>
-                        <a href="#">Learn more <img src="assets/button_arrow.svg"></a>
+                        <a href="#">Learn more <img src="assets/button_arrow.svg" alt="arrow_image"></a>
                     </div>
-                    <img src="assets/search_data_image.svg">
                 </div>
                 <div class="_24_hours_class">
                     <div>
@@ -72,9 +87,8 @@
                             meet again in the morning, giving you comfort when
                             you need data when urgent.
                         </p>
-                        <a href="#">Learn more <img src="assets/button_arrow.svg"></a>
+                        <a href="#">Learn more <img src="assets/button_arrow.svg" alt="arrow_image"></a>
                     </div>
-                    <img src="assets/24_hours_image.svg">
                 </div>
                 <div class="print_out_class">
                     <div >
@@ -83,9 +97,8 @@
                             Print out service gives you convenience if someday
                             you need print data, just edit it all and just print it.
                         </p>
-                        <a href="#">Learn more <img src="assets/button_arrow.svg"></a>
+                        <a href="#">Learn more <img src="assets/button_arrow.svg" alt="arrow_image"></a>
                     </div>
-                    <img src="assets/print_out_image.svg">
                 </div>
                 <div class="security_code_class">
                     <div>
@@ -95,9 +108,8 @@
                             to be safer. The file can be secured with a code or password that
                             you created, so only you can open the file.
                         </p>
-                        <a href="#">Learn more <img src="assets/button_arrow.svg"></a>
+                        <a href="#">Learn more <img src="assets/button_arrow.svg" alt="arrow_image"></a>
                     </div>
-                    <img src="assets/security_code_image.svg">
                 </div>
             </div>
         </section>
@@ -111,13 +123,13 @@
             </div>
             <aside>
                 <button class="learn_more_button">Learn more</button>
-                <button class="request_demo_button">Request Demo <img src="assets/button_arrow.svg"></button>
+                <button class="request_demo_button">Request Demo <img src="assets/button_arrow.svg" alt="arrow_image"></button>
             </aside>
         </div>
         <div class="bot_footer">
             <p>© Datawarehouse™, 2020. All rights reserved.
                 Company Registration Number: 21479524.</p>
-            <img src="assets/message_icon.svg">
+            <img src="assets/message_icon.svg" alt="icon_image">
         </div>
     </footer>
 </body>

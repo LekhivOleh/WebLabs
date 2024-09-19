@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin: 120px 0 0 0;
+    margin-top: 100px;
     > div {
-        margin-left: 100px;
-        margin-right: -100px;
-        margin-bottom: 150px;
+        margin: 3% auto 3%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 50px;
     }
-
 }
 
 .features_section h2{
@@ -20,6 +21,7 @@
     font-weight: 700;
     line-height: 130%;
     width: 405px;
+    margin: 0 auto 0;
 }
 
 .features_section h5{
@@ -42,16 +44,20 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 160%;
+    text-align: center;
+    margin: 0 auto 0;
 }
 
-.features_section > div > div > div p{
-    width: 220px;
-    height: 160px;
-    font-family: 'Avenir', sans-serif;
-    color: #4B5D68;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
+.features_section > div > div > div {
+
+    p{
+        width: 220px;
+        height: 160px;
+        font-family: 'Avenir', sans-serif;
+        color: #4B5D68;
+        font-size: 16px;
+        font-weight: 400;
+    }
 }
 
 
@@ -65,32 +71,16 @@
 }
 
 
-.features_section > div{
-    width: 1139px;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 50px;
-    margin-top: 50px;
-}
-
 .search_data_class{
     background-image: url('../assets/search_data_bg.svg');
-    width: 442px;
-    height: 358px;
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
-    position: relative;
-
-     > img {
-        position: absolute;
-        top: 25%;
-        left: -25%;
-    }
+    background-position: center;
 }
 
 .search_data_class div{
-    padding: 50px 50px 32px 172px;
+    padding: 50px 50px 32px 265px;
     display:flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -100,20 +90,14 @@
 
 ._24_hours_class{
     background-image: url("../assets/24_hours_bg.svg");
-    width: 442px;
-    height: 358px;
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
-    position: relative;
-
-    > img {
-        position: absolute;
-        top: 25%;
-        left: -25%;
-    }
+    background-position: center;
 }
 
 ._24_hours_class div{
-    padding: 50px 50px 32px 172px;
+    padding: 50px 50px 32px 274px;
     display:flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -123,20 +107,14 @@
 
 .print_out_class{
     background-image: url('../assets/print_out_bg.svg');
-    width: 442px;
-    height: 358px;
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
-    position: relative;
-
-    > img {
-        position: absolute;
-        top: 25%;
-        left: -25%;
-    }
+    background-position: left;
 }
 
 .print_out_class div{
-    padding: 50px 50px 33px 172px;
+    padding: 50px 50px 33px 280px;
     display:flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -146,23 +124,42 @@
 
 .security_code_class{
     background-image: url('../assets/security_code_bg.svg');
-    width: 442px;
-    height: 358px;
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
-    position: relative;
-
-    > img {
-        position: absolute;
-        top: 25%;
-        left: -25%;
-    }
+    background-position: center;
 }
 
 .security_code_class div{
-    padding: 50px 50px 33px 172px;
+    padding: 50px 50px 33px 270px;
     display:flex;
     align-items: flex-start;
     justify-content: space-between;
     row-gap: 20px;
     flex-direction: column;
 }
+
+.features_section a{
+    color: #212353;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 160%;
+    letter-spacing: 0.08px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.features_section > div > div > div a:hover{
+    transition: all 0.5s ease-in-out;
+    img{
+        transition: all 0.5s ease-in-out;
+        transform: translateX(5px);
+        &:hover{
+            transform: scale(1.1) translateX(5px);
+        }
+    }
+
+}
+

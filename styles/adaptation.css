@@ -1,0 +1,757 @@
+@media (max-width: 2560px) {
+    header{
+        .burger {
+            display: none;
+        }
+        nav{
+            gap: 45px;
+        }
+        width: 50%;
+    }
+    .herosection{
+        h1{
+            font-size: 90px;
+            width: 100%;
+        }
+        p{
+            width: 80%;
+            font-size: 30px;
+        }
+        button{
+            font-size: 35px;
+            width: 300px;
+            height: 100px;
+        }
+    }
+    .infosection{
+        margin: 150px auto 0;
+        width: 90%;
+        column-gap: 0;
+        > div{
+            row-gap:70px;
+            width: 40%;
+        }
+        h2{
+            width: 100%;
+            font-size: 65px;
+            text-align: center;
+        }
+        p{
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .features_section{
+        > h2{
+            font-size: 55px;
+        }
+        > p{
+            font-size: 25px;
+        }
+        > div{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    footer{
+
+        .top_footer{
+            justify-content: center;
+        }
+        .bot_footer{
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 2400px) {
+    .herosection{
+        background-position: right 10% bottom -70px; !important;
+         h1{
+            font-size: 80px;
+            width: 100%;
+         }
+         p {
+            width: 60%;
+            font-size: 25px;
+         }
+        button{
+            font-size: 23px;
+            width: 250px;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 1920px) {
+    header{
+        width: 100%;
+    }
+    .herosection{
+        background-position: right 10% bottom -70px;
+        h1{
+            font-size: 80px;
+            width: 100%;
+        }
+        p {
+            width: 50%;
+            font-size: 18px;
+        }
+        button{
+            font-size: 18px;
+            width: 170px;
+            height: auto;
+        }
+    }
+    .infosection{
+        div{
+            row-gap: 35px;
+            width: 50%;
+        }
+        h2{
+            text-align: start;
+            font-size: 52px;
+        }
+        p{
+            text-align: start;
+            font-size: 22px;
+        }
+    }
+    .features_section{
+        > h2{
+            font-size: 50px;
+        }
+        > p{
+            font-size: 25px;
+            width: 45%
+        }
+        > div{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media (max-width: 1350px){
+    .herosection{
+        padding-left: 120px;
+        background-size: 50%;
+        background-position: right 5% bottom 100px;
+        div{
+            width: 50%;
+            height: auto;
+        }
+        h1{
+            font-size: 60px;
+        }
+        p {
+            width: 90%;
+            font-size: 18px;
+        }
+        button{
+            font-size: 20px;
+            width: 200px;
+            height: auto;
+        }
+    }
+    .infosection{
+        margin: 0 auto 0;
+        width: 90%;
+        column-gap: 0;
+        h2{
+            font-size: 50px;
+        }
+        p{
+            font-size: 22px;
+        }
+    }
+    .features_section{
+        > h2{
+            font-size: 50px;
+        }
+        > p{
+            font-size: 31px;
+            width: 70%;
+        }
+    }
+    .bot_footer {
+
+        img{
+            right: 4%;
+            bottom: 4%;
+            transform: scale(1.5);
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+@media (max-width: 1160px){
+    .herosection{
+        padding: 45px 100px;
+        height: 200%;
+        background-size: 70%;
+        background-position: right 50% bottom 5%;
+        div{
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            column-gap: 10px;
+            margin: 0 auto 50%;
+            width: 65%;
+            h1{
+                text-align: center;
+                font-size: 65px;
+            }
+            p{
+                text-align: center;
+                font-size: 30px;
+            }
+            button{
+                margin: 0 auto 0;
+                font-size: 28px;
+                width: 270px;
+                height: 90px;
+            }
+        }
+    }
+    .infosection{
+        margin: 10% auto 100px;
+        background-size: 80%;
+        height: auto;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        row-gap: 5%;
+        > div{
+            width: 80%;
+            padding-bottom: 10%;
+            > h2{
+                font-size: 55px;
+                text-align: center;
+            }
+            > p{
+                text-align: center;
+                font-size: 28px;
+            }
+        }
+    }
+    .features_section{
+        row-gap: 34px;
+         p {
+             padding-top: 0;
+         }
+        > div{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 50%;
+            justify-content: space-evenly;
+            > div {
+
+                > div {
+                    row-gap: 10px;
+                    background-size: 200%;
+                    a {
+                        width: 80%;
+                        justify-content: space-evenly;
+                    }
+                }
+            }
+        }
+        .search_data_class{
+            div {
+                padding: 10px 0 10px 0;
+                width: 50%;
+                margin-left: 50%;
+                align-items: center;
+                > h5 {
+                    width: 50%;
+                    text-align: center;
+                    font-size: 35px;
+                }
+                > p {
+                    width: 80%;
+                    font-size: 15px;
+                }
+                > a {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+        ._24_hours_class{
+            div {
+                padding: 10px 0 10px 0;
+                width: 50%;
+                margin-left: 50%;
+                align-items: center;
+                > h5 {
+                    width: 50%;
+                    text-align: center;
+                    font-size: 35px;
+                }
+                > p {
+                    width: 80%;
+                    font-size: 15px;
+                    height: auto;
+                }
+                > a {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+        .print_out_class{
+            div {
+                padding: 10px 0 10px 0;
+                width: 50%;
+                margin-left: 50%;
+                align-items: center;
+                > h5 {
+                    text-align: center;
+                    font-size: 35px;
+                }
+                > p {
+                    width: 80%;
+                    font-size: 15px;
+                }
+                > a {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+        .security_code_class{
+            div {
+                padding: 10px 0 10px 0;
+                width: 50%;
+                margin-left: 50%;
+                align-items: center;
+                > h5 {
+                    width: 50%;
+                    text-align: center;
+                    font-size: 35px;
+                }
+                > p {
+                    width: 80%;
+                    font-size: 15px;
+                }
+                > a {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .footer {
+        .top_footer{
+            > div{
+                width: 45%;
+            }
+        }
+        img {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .navigation-mobile {
+        display: none;
+        height: 55%;
+        font-size: 28px;
+    }
+        header{
+        .burger {
+            display: flex;
+            row-gap: 7px;
+        }
+        > nav {
+
+            > .horizontal-list{
+                display: none;
+            }
+        }
+        button {
+            display: none;
+        }
+    }
+    .herosection {
+        padding: 0 100px;
+        height: 200%;
+        background-image: none;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            column-gap: 10px;
+            margin: 0 auto 5%;
+            h1 {
+                text-align: center;
+                font-size: 65px;
+            }
+
+            p {
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+    }
+    .features_section{
+        row-gap: 34px;
+        padding-bottom: 70px;
+        p {
+            padding-top: 0;
+        }
+        > div{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 50%;
+            height: 150%;
+            row-gap: 70px;
+            > div {
+                height: 110%;
+                > div {
+                    background-size: 200%;
+                    justify-content: space-evenly;
+                    a {
+                        width: 80%;
+                        justify-content: space-evenly;
+                    }
+                    p {
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+    }
+    .footer {
+        padding-top: 50px;
+
+        .top_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 0 auto;
+            width: 80%;
+
+            > div {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                h2{
+                    font-size: 55px;
+                    width: 100%;
+                }
+                > p {
+                    font-size: 22px;
+                    width: 100%;
+                }
+            }
+
+            aside {
+                height: auto;
+                justify-content: space-evenly;
+            }
+
+            button {
+                font-size: 23px;
+                width: 270px;
+                height: 90px;
+            }
+        }
+
+        .bot_footer {
+            > p {
+                margin: auto;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+
+        > nav {
+
+            > .horizontal-list{
+                display: none;
+            }
+        }
+        > button {
+            display: none;
+        }
+    }
+    .herosection {
+        padding: 0 ;
+        height: 200%;
+        width: 100%;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            column-gap: 10px;
+            margin: 0 auto;
+            h1 {
+                text-align: center;
+                font-size: 45px;
+            }
+
+            p {
+                text-align: center;
+                font-size: 20px;
+            }
+            > button {
+                width: 200px;
+                height: auto;
+                font-size: 18px
+            }
+        }
+    }
+    .infosection{
+        height: 400px;
+        margin-bottom: 50px;
+        > div {
+            padding-bottom: 0;
+            justify-content: space-evenly;
+            > h2 {
+                font-size: 43px;
+            }
+            > p{
+                font-size: 16px;
+            }
+        }
+        > aside{
+            display: none;
+        }
+    }
+    .features_section{
+        margin-top: 0;
+        row-gap: 34px;
+        padding-bottom: 50px;
+        h2 {
+            font-size: 35px;
+        }
+        p {
+            font-size: 18px;
+        }
+        > div{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 75%;
+            height: 150%;
+            row-gap: 70px;
+            > div {
+                height: 110%;
+                > div {
+                    background-size: 200%;
+                    justify-content: space-evenly;
+                    a {
+                        width: 80%;
+                        justify-content: space-evenly;
+                    }
+                    p {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        padding-top: 50px;
+
+        .top_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 0 auto;
+            width: 80%;
+
+            > div {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                > h2{
+                    font-size: 40px;
+                }
+                > p {
+                    font-size: 22px;
+                }
+            }
+
+            aside {
+                height: auto;
+                width: 70%;
+                justify-content: space-evenly;
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            button {
+                font-size: 23px;
+                width: 270px;
+                height: 90px;
+            }
+        }
+
+        .bot_footer {
+
+            img{
+                right: 4%;
+                bottom: 4%;
+                transform: scale(1);
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(2);
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    .herosection{
+
+        > div{
+            width: 80%;
+            > h1{
+                font-size: 30px;
+            }
+            > p{
+                font-size: 16px;
+            }
+            > button{
+                width: 150px;
+                font-size: 14px;
+            }
+        }
+    }
+    .infosection{
+         > div{
+
+             > h2{
+                 font-size: 30px;
+             }
+             > p{
+                 font-size: 14px;
+             }
+         }
+    }
+    .features_section{
+        > h2{
+            font-size: 25px;
+            width: 100%;
+        }
+        > p{
+            font-size: 14px;
+        }
+        .search_data_class{
+            > div{
+                > h5{
+                    font-size: 22px;
+                }
+                > p{
+                    font-size: 14px;
+                }
+                > a{
+                    font-size: 14px;
+                }
+            }
+        }
+        ._24_hours_class{
+            > div{
+                > h5{
+                    font-size: 22px;
+                }
+                > p{
+                    font-size: 14px;
+                }
+                > a{
+                    font-size: 14px;
+                }
+            }
+        }
+        .print_out_class{
+            > div{
+                > h5{
+                    font-size: 22px;
+                }
+                > p{
+                    font-size: 14px;
+                }
+                > a{
+                    font-size: 14px;
+                }
+            }
+        }
+        .security_code_class{
+            > div{
+                > h5{
+                    font-size: 22px;
+                }
+                > p{
+                    font-size: 14px;
+                }
+                > a{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .footer {
+        padding-top: 30px;
+
+        .top_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 0 auto;
+            width: 80%;
+
+            > div {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                > h2{
+                    font-size: 30px;
+                }
+                > p {
+                    font-size: 15px;
+                }
+            }
+
+            aside {
+                height: auto;
+                justify-content: space-evenly;
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            button {
+                font-size: 14px;
+                width: 200px;
+                height: 60px;
+            }
+        }
+        .bot_footer {
+
+            img{
+                right: 4%;
+                bottom: 4%;
+                transform: scale(1);
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(2);
+                }
+            }
+        }
+    }
+}
