@@ -1,8 +1,8 @@
 ## Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 
 ### Виконав: Лехів Олег Романович (ІР-21)
-### Лабораторна робота №2 (Варіант 9)
+### Лабораторна робота №3 (Варіант 9)
 
-#### Advanced landing
+### CRUD Javascript App: View Page
 
-Description: Improve a landing page following the given design (same as previous) by adding full responsiveness and some animation.
+Description: In this work, you have to make a simple presentation part of a website - View Page
