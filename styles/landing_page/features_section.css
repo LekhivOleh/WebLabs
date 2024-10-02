@@ -72,7 +72,7 @@
 
 
 .search_data_class{
-    background-image: url('../assets/search_data_bg.svg');
+    background-image: url('../../assets/search_data_bg.svg');
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@
 }
 
 ._24_hours_class{
-    background-image: url("../assets/24_hours_bg.svg");
+    background-image: url("../../assets/24_hours_bg.svg");
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
@@ -106,7 +106,7 @@
 }
 
 .print_out_class{
-    background-image: url('../assets/print_out_bg.svg');
+    background-image: url('../../assets/print_out_bg.svg');
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
@@ -123,7 +123,7 @@
 }
 
 .security_code_class{
-    background-image: url('../assets/security_code_bg.svg');
+    background-image: url('../../assets/security_code_bg.svg');
     width: 100%;
     height: auto;
     background-repeat: no-repeat;

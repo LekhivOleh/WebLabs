@@ -1,0 +1,45 @@
+@import "header.css";
+@import "create_section.css";
+@import "footer.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eefcff;
+}
+
+
+main{
+    min-height: 70svh;
+}
+
+body{
+    background: linear-gradient(180deg, #F6FAFD 0%, #FFF 19.4%);
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../assets/fonts/Avenir_Regular.ttf');
+}
+
+.font-avenir {
+    font-family: 'Avenir', sans-serif;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../../assets/fonts/Helvetica.ttf');
+}
+
+.font-helvetica {
+    font-family: 'Helvetica', sans-serif;
+}
+
+input[type="button"]{
+    cursor: pointer;
+}
+
+select{
+    cursor: pointer;
+}
