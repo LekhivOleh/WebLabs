@@ -5,7 +5,7 @@ import {
     addItemToPage,
     getItemById,
     itemTemplate,
-} from "./util.js";
+} from "../util.js";
 
 class lamp_card {
     constructor(manufacturer, power, amount_of_lamps) {
@@ -42,6 +42,7 @@ function displayData(data) {
         const row = itemTemplate(item);
         tableBody.insertAdjacentHTML('beforeend', row);
         document.getElementById(`delete_button_${item.id}`).addEventListener('click', () => deleteItem(item.id));
+        document.getElementById(`edit_button_${item.id}`).addEventListener('click', () => editItem(item.id));
     });
 }
 
@@ -56,7 +57,6 @@ function cancelButtonClick() {
 function submitButtonClick(event) {
     event.preventDefault();
     const { manufacturers, power, amount_of_lamps } = getInputValues();
-    clearInputs();
     addItem(new lamp_card(manufacturers, power, amount_of_lamps));
 }
 
@@ -88,11 +88,13 @@ function findItem() {
 }
 
 const addItem = (newItem) => {
-    if (newItem.amount_of_lamps && newItem.manufacturers && newItem.power && newItem.power >= 0 && newItem.amount_of_lamps >= 0) {
+    if (newItem.amount_of_lamps && newItem.manufacturers && newItem.power && newItem.power >= 0
+        && newItem.amount_of_lamps >= 0 && !data_arr.find((lamp) => lamp.manufacturers === newItem.manufacturers)){
         data_arr.push(newItem);
         filteredData.push(newItem);
         displayData(filteredData);
         sortItems();
+        clearInputs();
     } else {
         alert('Something is wrong with the given data');
     }
@@ -129,6 +131,43 @@ function deleteItem(itemId) {
     displayData(filteredData);
 }
 
+function editItem(itemId) {
+    const item = data_arr.find(item => item.id === itemId);
+
+    const itemContainer = document.getElementById(itemId);
+    itemContainer.innerHTML = `
+        <div class="card-body">
+            <img src="../assets/no_image.jpg" class="item-container_image" alt="card">
+            <div class="card_info">
+                <input class="abc" value="${item.manufacturers}">
+                <input class="power" value="${item.power}">
+                <input class="lamps" value="${item.amount_of_lamps}">
+            </div>
+            <div class="buttons-container">
+                <button class="save_button" id="save_button_${itemId}">Save</button>
+                <button class="delete_button" id="delete_button_${itemId}">Delete</button>
+            </div>
+        </div>
+    `;
+
+    const saveButton = document.getElementById(`save_button_${itemId}`);
+    saveButton.addEventListener('click', () => {
+        const newManufacturers = itemContainer.querySelector('.abc').value;
+        const newPower = itemContainer.querySelector('.power').value;
+        const newAmountOfLamps = itemContainer.querySelector('.lamps').value;
+
+        if (newAmountOfLamps >= 0 && newPower >= 0 && newPower && newAmountOfLamps && newManufacturers) {
+            const newItem = new lamp_card(newManufacturers, newPower, newAmountOfLamps);
+            data_arr = data_arr.map(item => item.id === itemId ? newItem : item);
+            filteredData = filteredData.map(item => item.id === itemId ? newItem : item);
+            displayData(filteredData);
+        }
+        else{
+            alert('Something is wrong with the given data');
+        }
+    });
+}
+
 submitButton.addEventListener("click", submitButtonClick);
 countButton.addEventListener("click", countItems);
 findButton.addEventListener("click", findItem);
@@ -142,4 +181,3 @@ findInput.addEventListener("keypress", function(event) {
 
 displayData(data_arr);
 sortItems();
-deleteItem();

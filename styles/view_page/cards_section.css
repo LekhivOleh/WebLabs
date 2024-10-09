@@ -141,14 +141,14 @@
 }
 
 .card-body .card_info {
-    > h5{
+    .abc{
         font-size: 18px;
         font-family: 'Avenir', sans-serif;
         width: 100%;
         text-wrap: wrap;
         overflow-wrap: break-word;
     }
-    > p{
+    .power, .lamps{
         font-family: 'Helvetica', sans-serif;
         width: 100%;
         text-wrap: wrap;
@@ -213,18 +213,16 @@
     justify-content: flex-start;
 }
 
-.delete_this_shi{
-    > img{
-        width: 225px;
-        height: 225px;
-    }
+.delete_this_shi > img {
+    width: 225px;
+    height: 225px;
 }
-
 
 a{
     text-decoration: none;
     color: black;
 }
+
 .create_page_button{
     width: fit-content;
     height: fit-content;

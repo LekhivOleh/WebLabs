@@ -47,3 +47,12 @@ export const addItemToPage = ({ id, manufacturers, power, amount_of_lamps}) => {
         itemTemplate({ id, manufacturers, power, amount_of_lamps})
     );
 }
+
+export const validateLampCardData = (manufacturers, power, amount_of_lamps) => {
+    if (manufacturers && power && amount_of_lamps && power >= 0 && amount_of_lamps >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
