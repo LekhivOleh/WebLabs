@@ -1,0 +1,66 @@
+.herosection{
+    padding: 45px 180px 100px 180px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    background-image: url("../../assets/image1_1.svg");
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    background-position: right 5% bottom -70px;
+}
+
+.herosection h1{
+    font-family: 'Helvetica', sans-serif;
+    color: #212353;
+    font-size: 80px;
+    width: 100%;
+}
+.herosection p{
+    font-family: 'Avenir', sans-serif;
+    width: 50%;
+    font-size: 18px;
+}
+
+.herosection button{
+    font-family: 'Avenir', sans-serif;
+    font-size: 18px;
+    line-height: 160%;
+    padding: 16px 37px;
+    width: 170px;
+    border-radius: 50px;
+    background: #9C69E2;
+    color: #ffffff;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        border: 2px solid #9C69E2;
+        background: #FFFFFF;
+        color: #9C69E2;
+        transform: scale(1.05);
+    }
+}
+
+.herosection div{
+    display: flex;
+    width: 645px;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 40px;
+}
+
+.herosection img{
+    position: absolute;
+    left: 570px;
+    top: 260px;
+}
+
+.herosection aside{
+    background-image: url("../../assets/image1_1.svg");
+    width: 500px;
+    height: 100svh;
+}
+
+.herosection div{
+    width: 50%;
+}
+

@@ -1,0 +1,12 @@
+header{
+    padding: 30px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 70%;
+}
+
+header h1{
+    font-family: 'Avenir', sans-serif;
+    font-size: 40px;
+}

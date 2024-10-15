@@ -1,0 +1,47 @@
+.edit_section h3{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 25px;
+    margin: 0 auto 50px;
+    width: fit-content;
+}
+
+.edit_form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: fit-content;
+    margin: auto;
+}
+
+.edit_form label{
+    font-family: 'Avenir', sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.edit_form label input{
+    height: 35px;
+    border: 0.1px solid grey;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Avenir', sans-serif   ;
+}
+
+.edit_form .submit_button{
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: royalblue;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        scale: 1.1;
+        border: 2px solid royalblue;
+        background-color: #FFFFFF;
+        color: royalblue;
+    }
+}

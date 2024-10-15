@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>View page</title>
+  <link rel="stylesheet" href="../styles/view_page/styles_view_page.css">
+</head>
+<body>
+<header>
+  <h1>Lamp store</h1>
+</header>
+<main class="cards_section">
+  <div class="create_and_find">
+    <form class="find_form">
+      <label>Find cards <input type="text" id="find_input"></label>
+      <div>
+        <input type="button" id="find_button" value="Find">
+        <input type="button" id="cancel_button" value="Cancel">
+        <input type="button" id="count_button" value="Count">
+        <select id="select_sort" class="select_sort">
+          <option selected disabled hidden="hidden"></option>
+          <option value="manufacturers decreasing">Manufacturer a to Z</option>
+          <option value="manufacturers increasing">Manufacturer Z to a</option>
+          <option value="power decreasing">By power a to Z</option>
+          <option value="power increasing">By power Z to a</option>
+          <option value="amountOfLamps decreasing">By lamps count a to Z</option>
+          <option value="amountOfLamps increasing">By lamps count Z to a</option>
+        </select>
+      </div>
+      <label id="power_label"></label>
+    </form>
+    <h3>Create data card</h3>
+    <form onsubmit="return false" class="create_form" id="create_form">
+      <label>Manufacturer <input type="text" id="manufacturer_input"></label>
+      <label>Power <input type="number" id="power_input"  min="0"></label>
+      <label>Amount of Lamps <input type="number" id="amount_input" min="0"></label>
+      <input type="submit" value="Submit" class="submit_button" id="submit_button">
+    </form>
+  </div>
+  <ul id="items_container" class="items_container">
+  </ul>
+</main>
+<footer>
+  <p>© Datawarehouse™, 2020. All rights reserved. Company Registration Number: 21479524.</p>
+</footer>
+<script type="module" src="index.js"></script>
+</body>
+</html>
