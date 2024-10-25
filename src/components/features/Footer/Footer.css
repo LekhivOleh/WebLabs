@@ -1,0 +1,6 @@
+footer p{
+    width: fit-content;
+    font-family: 'SourceSansPro', sans-serif;
+    font-size: 17px;
+    margin: 70px auto;
+}

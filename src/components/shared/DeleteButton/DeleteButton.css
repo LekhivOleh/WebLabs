@@ -1,0 +1,33 @@
+.delete_button{
+    height: 30px;
+    width: 70px;
+    background-color: #193694;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.delete_button:hover{
+    scale: 1.1;
+    border: 2px solid #193694;
+    background-color: #FFFFFF;
+    color: #193694;
+}
+
+.delete_button{
+    height: 30px;
+    width: 70%;
+    background-color: #193694;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        scale: 1.1;
+        border: 2px solid #193694;
+        background-color: #FFFFFF;
+        color: #193694;
+    }
+}

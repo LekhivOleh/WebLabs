@@ -1,0 +1,27 @@
+.hero_section{
+    margin: 8% 5% 12%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hero_lamp_photo{
+    width: 30%;
+    height: auto;
+}
+
+.hero_text_box{
+    max-width: 40%;
+    display: flex;
+    justify-content: space-evenly   ;
+    flex-direction: column;
+
+    h1{
+        font-size: 30px;
+        font-family: "SourceSansPro", sans-serif;
+    }
+
+    p{
+        font-size: 18px;
+        font-family: "SourceSansPro", sans-serif;
+    }
+}

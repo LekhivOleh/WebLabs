@@ -1,0 +1,17 @@
+.edit_button{
+    height: 30px;
+    width: 70px;
+    background-color: #193694;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.edit_button:hover{
+    scale: 1.1;
+    border: 2px solid #193694;
+    background-color: #FFFFFF;
+    color: #193694;
+}
