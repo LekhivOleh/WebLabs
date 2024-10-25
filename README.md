@@ -1,10 +1,10 @@
 ## Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 
 ### Виконав: Лехів Олег Романович (ІР-21)
-### Лабораторна робота №6
+### Лабораторна робота №7
 
-#### React.js: Home page
+#### React.js: Catalog page
 
-Start creating your React App with a simple Home page (see
-the link to wireframe above). Your e-commerce app subject is about your
-entities from previous (3-5) works.
+Description: Continue work on your React App by adding a page with Items list 
+(see the link to wireframe of Catalog page above).
+https://wireframepro.mockflow.com/view/lviv-iot-react-app#/page/bb92d63b438c4b0d9d333f328c1d61a0/mode/view
