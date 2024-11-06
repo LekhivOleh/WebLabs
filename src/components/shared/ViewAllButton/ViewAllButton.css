@@ -1,0 +1,23 @@
+.view_all_button {
+    padding: 18px 22px;
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 20px;
+    background-color: #193694;
+    border: none;
+    border-radius: 6px;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    img {
+        background-color: transparent;
+    }
+    &:hover {
+        scale: 1.1;
+        border: 2px solid #193694;
+        background-color: #FFFFFF;
+        color: #193694;
+        img {
+            content: url("../../features/CardSection/assets/images/button_arrow_blue.svg");
+        }
+    }
+}

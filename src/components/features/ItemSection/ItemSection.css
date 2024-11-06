@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'SourceSansPro', sans-serif;
+    src: url("../../../assets/fonts/SourceSansPro-Regular.otf");
+}
+
+.item_section{
+    display:flex;
+    margin: 50px 10%;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 20px;
+}
+
+.lamps_image{
+    width: 305px;
+    height: auto;
+}
+
+.item_section_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lamps_information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.select_lamps_information{
+    display: flex;
+    gap: 50px;
+}
+
+.lamps_information_text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .item_manufacturer{
+        font-family: 'SourceSansPro', sans-serif;
+        font-size: 36px;
+        color: #333333;
+        font-weight: 120;
+    }
+
+    .item_power{
+        font-family: 'SourceSansPro', sans-serif;
+        font-size: 20px;
+        color: #333333;
+        font-weight: 500;
+    }
+
+    .item_description{
+        font-family: 'SourceSansPro', sans-serif;
+        font-size: 16px;
+        color: #333333;
+        font-weight: 300;
+    }
+}
+
+.lamps_footer{
+    display: flex;
+    justify-content: space-between;
+
+    .lamps_price{
+        font-family: 'SourceSansPro', sans-serif;
+        font-size: 32px;
+        margin: auto 0;
+    }
+}
+
+.lamps_footer_buttons{
+    display: flex;
+    gap: 20px;
+}

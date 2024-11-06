@@ -1,0 +1,17 @@
+.search_and_filters_submit{
+    max-height: 40px;
+    text-align: center;
+    padding: 8px 22px;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    border: 2px solid dimgray;
+    border-radius: 6px;
+    color: dimgray;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        background-color: dimgray;
+    }
+}

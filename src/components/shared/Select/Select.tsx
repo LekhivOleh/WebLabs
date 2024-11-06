@@ -1,15 +1,20 @@
 import React from 'react';
 
 interface SelectProps {
-    options: string[];
     className: string;
+    name: string;
+    options: string[];
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    value: string;
 }
 
-const SelectComponent: React.FC<SelectProps> = ({ options, className }) => {
+const SelectComponent: React.FC<SelectProps> = ({ className, name, options, onChange, value }) => {
     return (
-        <select className={className}>
-            {options.map((option, index) => (
-                <option key={index}>{option}</option>
+        <select className={className} name={name} onChange={onChange} value={value}>
+            {options.map(option => (
+                <option key={option} value={option}>
+                    {option}
+                </option>
             ))}
         </select>
     );

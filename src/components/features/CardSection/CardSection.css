@@ -68,6 +68,7 @@ a{
 
 .card_section_buttons{
     display: flex;
+    flex-direction: row;
     gap: 20px;
     justify-content: flex-end;
 }

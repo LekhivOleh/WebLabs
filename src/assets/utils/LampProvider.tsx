@@ -1,16 +1,14 @@
-import React, { FC, ReactNode } from 'react';
-import LampContext, { lamps } from './lamp';
+import React, { createContext, useContext, ReactNode } from 'react';
+import { Lamp, lamps } from './lamp';
 
-interface LampProviderProps {
-    children: ReactNode;
-}
+const LampContext = createContext<Lamp[]>(lamps);
 
-const LampProvider: FC<LampProviderProps> = ({ children }) => {
+export const useLamps = () => useContext(LampContext);
+
+export const LampProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     return (
         <LampContext.Provider value={lamps}>
             {children}
         </LampContext.Provider>
     );
 };
-
-export default LampProvider;

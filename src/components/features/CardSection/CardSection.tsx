@@ -3,7 +3,8 @@ import './CardSection.css';
 import ItemCard from '../../entities/ItemCard/ItemCard';
 import { Lamp } from '../../../assets/utils/lamp';
 import ViewAllButton from "../../shared/ViewAllButton/ViewAllButton";
-import ShowMoreButton from "../../shared/ShowMoreButton/ShowMoreButton";
+import ViewMoreButton from "../../shared/ViewMoreButton/ViewMoreButton";
+import ItemCardCatalog from "../../entities/ItemCardCatalog/ItemCardCatalog";
 
 interface CardsProps {
     cards: Array<Lamp>;
@@ -20,8 +21,8 @@ const CardSection: FC<CardsProps> = ({ cards }) => {
         <section className="cardSection">
             <ul className="cards">
                 {cards.slice(0, visibleCount).map((card) => (
-                    <ItemCard
-                        key={card.id} // Ensure unique key for each card
+                    <ItemCardCatalog
+                        key={card.id}
                         id={card.id}
                         manufacturer={card.manufacturer}
                         power={card.power}
@@ -30,8 +31,8 @@ const CardSection: FC<CardsProps> = ({ cards }) => {
                 ))}
             </ul>
             <div className="card_section_buttons">
-                <ShowMoreButton onClick={showMoreItems} />
-                <ViewAllButton />
+                <ViewMoreButton onClick={showMoreItems}/>
+                <ViewAllButton/>
             </div>
         </section>
     );

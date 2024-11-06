@@ -17,3 +17,11 @@
     max-width: 90%;
     margin: auto;
 }
+
+.catalog_section_buttons{
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+}

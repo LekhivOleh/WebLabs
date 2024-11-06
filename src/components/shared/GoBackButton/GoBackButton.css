@@ -1,0 +1,16 @@
+.go_back_button{
+    font-family: 'SourceSansPro', sans-serif;
+    font-size: 14px;
+    background-color: #effcff;
+    color: dimgray;
+    width: fit-content;
+    border: 2px solid dimgray;
+    padding: 17px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        background-color: dimgray;
+        color: #effcff;
+    }
+}

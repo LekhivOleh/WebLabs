@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 import "./ShowMoreButton.css";
 
 interface ShowMoreButtonProps {
-    onClick: () => void;
+    cardId: string;
 }
 
-const ShowMoreButton: FC<ShowMoreButtonProps> = ({ onClick }) => {
+const ShowMoreButton: FC<ShowMoreButtonProps> = ({ cardId }) => {
     return (
-        <button className="show_more_button" onClick={onClick}>Show more</button>
+        <Link className="show_more_button" id={cardId} to={`/item/${cardId}`}>Show more</Link>
     );
 };
 
