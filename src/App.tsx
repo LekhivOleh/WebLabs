@@ -6,7 +6,6 @@ import Item from './components/pages/Item/Item';
 import Header from './components/features/Header/Header';
 import Footer from './components/features/Footer/Footer';
 import './App.css';
-import { lamps } from './assets/utils/lamp';
 
 const App = () => {
   return (
@@ -14,7 +13,7 @@ const App = () => {
       <Router>
         <Header/>
         <Routes>
-          <Route path="/" element={<Home lamps={lamps} />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/catalog" element={<Catalog/>} />
           <Route path="/item/:id" element={<Item/>} />
         </Routes>

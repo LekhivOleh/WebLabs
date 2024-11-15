@@ -1,40 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './CatalogSection.css';
 import ItemCardCatalog from '../../entities/ItemCardCatalog/ItemCardCatalog';
-import { useLamps } from '../../../assets/utils/LampProvider';
-
-interface Filters {
-    manufacturer: string;
-    color: string;
-    search: string;
-}
+import { LampDto } from '../../../assets/utils/LampDto';
+import {SearchOptions} from "../../../assets/utils/SearchOptions";
 
 interface CatalogItemSectionProps {
-    filters: Filters;
+    lamps: LampDto[];
+    searchOptions: SearchOptions;
 }
 
-const CatalogItemSection: React.FC<CatalogItemSectionProps> = ({ filters }) => {
-    const lamps = useLamps();
-    const [filteredLamps, setFilteredLamps] = useState(lamps);
-
-    useEffect(() => {
-        const normalizedSearch = filters.search.toLowerCase().trim();
-
-        const newFilteredLamps = lamps.filter(lamp => {
-            return (!filters.manufacturer || lamp.manufacturer === filters.manufacturer) &&
-                (!filters.color || lamp.color === filters.color) &&
-                (lamp.manufacturer.toLowerCase().includes(normalizedSearch) ||
-                    lamp.power.toString().includes(normalizedSearch) ||
-                    lamp.amountOfLamps.toString().includes(normalizedSearch));
-        });
-
-        setFilteredLamps(newFilteredLamps);
-    }, [filters, lamps]);
-
+const CatalogItemSection: React.FC<CatalogItemSectionProps> = ({ lamps, searchOptions }) => {
     return (
         <section className="catalogItemSection">
             <ul className="cards">
-                {filteredLamps.map(lamp => (
+                {lamps.map(lamp => (
                     <ItemCardCatalog
                         key={lamp.id}
                         id={lamp.id}

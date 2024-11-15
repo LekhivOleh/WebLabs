@@ -1,37 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ItemSection.css';
 import { useParams } from 'react-router-dom';
 import Select from '../../shared/Select/Select';
-import { useLamps } from '../../../assets/utils/LampProvider';
 import GoBackButton from "../../shared/GoBackButton/GoBackButton";
 import AddToCartButton from "../../shared/AddToCartButton/AddToCartButton";
 import photo from '../../../assets/images/no_image.svg';
 import SelectAmount from "../../shared/SelectAmount/SelectAmount";
+import LampService from '../../../services/LampService';
+import { LampDto } from "../../../assets/utils/LampDto";
+import LoaderSpinner from '../../shared/Loader/Loader';
 
 const ItemSection = () => {
     const { id } = useParams<{ id: string }>();
-    const lamps = useLamps();
-    const lamp = lamps.find(lamp => lamp.id === id);
-    const [selectedColor, setSelectedColor] = useState<string>(lamp?.color || '');
+    const [lamp, setLamp] = useState<LampDto | null>(null);
+    const [selectedColor, setSelectedColor] = useState<string>('');
     const [amount, setAmount] = useState<number>(1);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        if (id) {
+            setLoading(true);
+            LampService.getLampById(id).then((response) => {
+                setLamp(response.data);
+                setSelectedColor(response.data.color);
+                setLoading(false);
+            });
+        }
+    }, [id]);
 
     const handleColorChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedColor(event.target.value);
     };
 
+    if (loading) {
+        return <LoaderSpinner />;
+    }
+
     if (!lamp) {
-        return <div>Item not found</div>;
+        return <div>Loading...</div>;
     }
 
     return (
         <div className="item_section">
             <div className={'item_section_container'}>
-                <img className={'lamps_image'} src={photo}/>
+                <img className={'lamps_image'} src={photo} alt="Lamp"/>
                 <div className={'lamps_information'}>
                     <h1>{lamp.manufacturer}</h1>
                     <p>Power: {lamp.power}w</p>
                     <p>Amount of Lamps: {lamp.amountOfLamps}pcs</p>
-                    <p>Price: ${lamp.price}</p>
                     <div className="select_lamps_information">
                         <div>
                             <p>Select color</p>
@@ -51,7 +67,7 @@ const ItemSection = () => {
                 </div>
             </div>
             <div className={'lamps_footer'}>
-            <h1>Overall price: {lamp.price}</h1>
+                <h1>Price: ${lamp.price}</h1>
                 <div className={'buttons-container'}>
                     <GoBackButton/>
                     <AddToCartButton/>

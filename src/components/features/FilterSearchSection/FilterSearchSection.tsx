@@ -1,68 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './FilterSearchSection.css';
 import SelectComponent from '../../shared/Select/Select';
 import SearchInput from '../../shared/SearchInput/SearchInput';
-import SubmitButton from '../../shared/SubmitButton/SubmitButton';
-import { lamps } from '../../../assets/utils/lamp';
+import { SearchOptions } from "../../../assets/utils/SearchOptions";
 
 interface FilterSearchSectionProps {
-    onFilterChange: (filters: { manufacturer: string; color: string; search: string }) => void;
+    setSearchOptions: (searchOptions: SearchOptions) => void;
+    searchOptions: SearchOptions;
 }
 
-const FilterSearchSection: React.FC<FilterSearchSectionProps> = ({ onFilterChange }) => {
-    const [filters, setFilters] = useState({ manufacturer: '', color: '', search: '' });
-
-    const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const { name, value } = event.target;
-        const normalizedValue = (name === 'manufacturer' && value === 'All manufacturers') ? '' : value;
-        const newFilters = { ...filters, [name]: normalizedValue };
-        if (name === 'color' && value === 'All colors') {
-            newFilters.color = '';
-        }
-        if (name === 'manufacturer' && value === 'All manufacturers') {
-            newFilters.manufacturer = '';
-        }
-        setFilters(newFilters);
-        onFilterChange(newFilters);
-    };
-
-    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newFilters = { ...filters, search: event.target.value };
-        setFilters(newFilters);
-        onFilterChange(newFilters);
-    };
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        onFilterChange(filters);
-    };
-
-    const uniqueOptions = (key: 'manufacturer' | 'color') =>
-        Array.from(new Set(lamps.map(lamp => lamp[key])));
-
+const FilterSearchSection: React.FC<FilterSearchSectionProps> = ({ setSearchOptions, searchOptions }) => {
     return (
-        <form className={'filter_and_search'} onSubmit={handleSubmit}>
-            <div className={'filters'}>
+        <div className="filter_and_search">
+            <div className="filters">
                 <SelectComponent
-                    className={`filter_1`}
-                    name="manufacturer"
-                    options={['All manufacturers', ...uniqueOptions('manufacturer')]}
-                    onChange={handleFilterChange}
-                    value={filters.manufacturer}
+                    className="filter_1"
+                    name="sortManufacturer"
+                    options={['Manufacturers', 'manufacturers increasing', 'manufacturers decreasing']}
+                    onChange={(event) => setSearchOptions({ ...searchOptions, sortManufacturer: event.target.value })}
+                    value={searchOptions.sortManufacturer}
                 />
                 <SelectComponent
-                    className={`filter_2`}
-                    name="color"
-                    options={['All colors', ...uniqueOptions('color')]}
-                    onChange={handleFilterChange}
-                    value={filters.color}
+                    className="filter_2"
+                    name="filterPower"
+                    options={['Power', '0 - 499', '500 - 999', '1000 - 1501', '1500 - 2001', '2000+']}
+                    onChange={(event) => setSearchOptions({ ...searchOptions, filterPower: event.target.value })}
+                    value={searchOptions.filterPower}
+                />
+                <SelectComponent
+                    className="filter_3"
+                    name="filterPrice"
+                    options={['Price', '0 - 499', '500 - 999', '1000 - 1501', '1500 - 2001', '2000+']}
+                    onChange={(event) => setSearchOptions({ ...searchOptions, filterPrice: event.target.value })}
+                    value={searchOptions.filterPrice}
+                />
+                <SelectComponent
+                    className="filter_4"
+                    name="filterIsEconomical"
+                    options={['Eco?', 'true', 'false']}
+                    onChange={(event) => setSearchOptions({ ...searchOptions, filterIsEconomical: event.target.value })}
+                    value={searchOptions.filterIsEconomical}
                 />
             </div>
-            <div className={'search_and_apply'}>
-                <SearchInput value={filters.search} onChange={handleSearchChange} />
-                <SubmitButton />
+            <div className="search_and_apply">
+                <SearchInput searchOptions={searchOptions} onChange={event => setSearchOptions({ ...searchOptions, search: event.target.value})} />
             </div>
-        </form>
+        </div>
     );
 };
 
