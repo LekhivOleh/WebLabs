@@ -1,8 +1,10 @@
 ## Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 
 ### Виконав: Лехів Олег Романович (ІР-21)
-### Лабораторна робота №9
+### Лабораторна робота №10
 
-#### React.js: Connecting to REST API
 
-Description: Finally! Now, you are about to put a final touches on all pages you created - implement interaction with your REST API server.
+#### React.js: Redux: Cart page (shopping cart)
+Description: You are on your way to finishing this insane project...
+Create the first of three cart pages - Shopping cart page. 
+Also, here you meet one of the most popular React library - Redux.

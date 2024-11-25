@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.checkout-page {
+    margin-top: 20px;
+    min-height: 80svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    justify-content: center;
+
+    .back-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        border-radius: 12px;
+        border: 1px solid #193694;
+        background:white;
+        color: #193694;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: #193694;
+            color: white
+        }
+    }
+}
