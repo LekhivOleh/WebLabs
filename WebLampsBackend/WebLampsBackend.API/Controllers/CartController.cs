@@ -9,9 +9,9 @@ namespace WebLampsBackend.API.Controllers;
 public class CartController(ICartService cartService) : ControllerBase
 {
     [HttpGet("Get")]
-    public OkObjectResult GetCarts()
+    public OkObjectResult GetCarts([FromQuery] Guid userId)
     {
-        return Ok(cartService.GetAllCarts());
+        return Ok(cartService.GetAllCarts(userId));
     }
     
     [HttpPut("Update/{id:Guid}")]
@@ -24,7 +24,7 @@ public class CartController(ICartService cartService) : ControllerBase
     [HttpPost("Add")]
     public NoContentResult AddCart([FromBody] CartAddDto cartAddDto)
     {
-        cartService.CreateCart(cartAddDto.Amount, cartAddDto.Type, cartAddDto.LampId);
+        cartService.CreateCart(cartAddDto.Amount, cartAddDto.Type, cartAddDto.LampId, cartAddDto.UserId);
         return NoContent();
     }
     

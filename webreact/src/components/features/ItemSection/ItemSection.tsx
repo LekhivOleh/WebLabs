@@ -11,7 +11,9 @@ import { getCarts } from '../../../store/cartSlice';
 import SelectAmount from "../../shared/SelectAmount/SelectAmount";
 import AddToCartButton from "../../shared/AddToCartButton/AddToCartButton";
 import CartService from '../../../services/CartService';
-import {CartDTO} from "../../../assets/utils/CartDto";
+import { CartDTO } from "../../../assets/utils/CartDto";
+import AuthService from "../../../services/AuthService";
+import jwt_decode, {jwtDecode} from 'jwt-decode';
 
 const ItemSection = () => {
     const { id } = useParams<{ id: string }>();
@@ -28,29 +30,40 @@ const ItemSection = () => {
     }, [id, dispatch]);
 
     const handleAddToCart = async () => {
-        try {
-            if (lamp) {
-                if (!amount || !type) {
-                    alert('Please select amount and type');
-                    return;
-                } else if (amount < 1) {
-                    alert('Amount cannot be 0 or negative');
-                    return;
-                }
-
-                const newCart: CartDTO = {
-                    lampId: lamp.id,
-                    amount: amount,
-                    type: type
-                };
-
-                await CartService.createCart(newCart);
-                alert('Lamp added to cart successfully');
-            }
-        } catch (e) {
-            console.error('Failed to add to cart', e);
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('User is not authenticated');
+            return;
         }
-    };
+
+        const decodedToken: any = jwtDecode(token);
+        const username = decodedToken.unique_name;
+
+        const response = await AuthService.GetUserByUsername(username);
+        const userId = response.data.id;
+
+        if (lamp) {
+            if (!amount || !type) {
+                alert('Please select amount and type');
+                return;
+            } else if (amount < 1) {
+                alert('Amount cannot be 0 or negative');
+                return;
+            }
+
+            const newCart: CartDTO = {
+                lampId: lamp.id,
+                amount: amount,
+                type: type,
+                userId: userId // Use the id directly
+            };
+
+            await CartService.createCart(newCart);
+            alert('Lamp added to cart successfully');
+        }
+
+};
+
 
     if (!lamp) {
         return <div>Loading...</div>;

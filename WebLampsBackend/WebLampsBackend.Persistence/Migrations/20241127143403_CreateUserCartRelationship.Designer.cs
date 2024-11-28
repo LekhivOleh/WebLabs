@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebLampsBackend.Persistence;
 
@@ -11,9 +12,11 @@ using WebLampsBackend.Persistence;
 namespace WebLampsBackend.Persistence.Migrations
 {
     [DbContext(typeof(WeblampsBackendDbContext))]
-    partial class WeblampsBackendDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241127143403_CreateUserCartRelationship")]
+    partial class CreateUserCartRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

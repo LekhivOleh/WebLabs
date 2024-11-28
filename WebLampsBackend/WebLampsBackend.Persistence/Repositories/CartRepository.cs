@@ -21,9 +21,9 @@ namespace WebLampsBackend.Persistence.Repositories
             return _context.Carts.FirstOrDefault(c => c.Id == id);
         }
 
-        public IEnumerable<Cart> GetAllCarts()
+        public IEnumerable<Cart> GetAllCarts(Guid userId)
         {
-            return _context.Carts.ToList();
+            return _context.Carts.Where(x => x.UserId == userId).ToList();
         }
 
         public Cart CreateCart(Cart cart)

@@ -9,5 +9,6 @@ namespace WebLampsBackend.Core.Models
         public string Type { get; set; }
         public Guid LampId { get; set; }
         public Lamp Lamp { get; set; }
+        public Guid UserId { get; set; }
     }
 }

@@ -8,6 +8,7 @@ public class WeblampsBackendDbContext(DbContextOptions<WeblampsBackendDbContext>
 {
     public DbSet<Lamp> Lamps { get; set; }
     public DbSet<Cart> Carts { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

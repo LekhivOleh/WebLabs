@@ -10,6 +10,8 @@ import { CartDTO } from "../../../assets/utils/CartDto";
 import CartService from "../../../services/CartService";
 import lampphoto from '../../features/ItemSection/assets/images/no_image_item.svg';
 import GoBackButton from "../../shared/GoBackButton/GoBackButton";
+import AuthService from "../../../services/AuthService";
+import jwt_decode, {jwtDecode} from 'jwt-decode';
 
 const CartPage: FC = () => {
     const { cart } = useSelector((state: RootState) => state.cartReducer);
@@ -17,9 +19,20 @@ const CartPage: FC = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        dispatch(getCarts()).then(() => {
-            dispatch(getLamps(defaultSearchOptions));
-        });
+        const fetchCarts = async () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const decodedToken: any = jwtDecode(token);
+                const username = decodedToken.unique_name;
+                const response = await AuthService.GetUserByUsername(username);
+                const userId = response.data.id;
+                dispatch(getCarts(userId)).then(() => {
+                    dispatch(getLamps(defaultSearchOptions));
+                });
+            }
+        };
+
+        fetchCarts();
     }, [dispatch]);
 
     const handleCartUpdate = async (item: CartDTO, change: number) => {
@@ -32,7 +45,14 @@ const CartPage: FC = () => {
             };
             if (updatedItem.amount > 0) {
                 await CartService.updateCart(item.id, updatedItem);
-                dispatch(getCarts());
+                const token = localStorage.getItem('token');
+                if (token) {
+                    const decodedToken: any = jwtDecode(token);
+                    const username = decodedToken.unique_name;
+                    const response = await AuthService.GetUserByUsername(username);
+                    const userId = response.data.id;
+                    dispatch(getCarts(userId));
+                }
             }
         }
     };
@@ -40,7 +60,14 @@ const CartPage: FC = () => {
     const handleItemDelete = async (id: string | undefined) => {
         if (id) {
             await CartService.deleteCart(id);
-            dispatch(getCarts());
+            const token = localStorage.getItem('token');
+            if (token) {
+                const decodedToken: any = jwtDecode(token);
+                const username = decodedToken.unique_name;
+                const response = await AuthService.GetUserByUsername(username);
+                const userId = response.data.id;
+                dispatch(getCarts(userId));
+            }
         }
     };
 

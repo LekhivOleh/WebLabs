@@ -17,7 +17,7 @@ const CheckoutForm = () => {
             .max(21, 'Too Long!')
             .required('This field is required'),
         email: Yup.string()
-            .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Invalid email')
+            .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+[^.2]+$/, 'Invalid email')
             .required('This field is required'),
         phone: Yup.string()
             .matches(/^[0-9]+$/, 'Invalid phone number')

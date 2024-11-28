@@ -22,12 +22,12 @@ namespace WebLampsBackend.Logic.Services
             return _cartRepository.GetCartById(id);
         }
 
-        public IEnumerable<Cart> GetAllCarts()
+        public IEnumerable<Cart> GetAllCarts(Guid userId)
         {
-            return _cartRepository.GetAllCarts();
+            return _cartRepository.GetAllCarts(userId);
         }
 
-        public Cart CreateCart(int amount, string type, Guid lampId)
+        public Cart CreateCart(int amount, string type, Guid lampId, Guid userId)
         {
             var id = Guid.NewGuid();
             var lamp = _lampRepository.GetLampById(lampId);
@@ -36,14 +36,14 @@ namespace WebLampsBackend.Logic.Services
                 throw new Exception("Lamp not found");
             }
 
-            var existingCart = _cartRepository.GetAllCarts().FirstOrDefault(c => c.LampId == lampId && c.Type == type);
+            var existingCart = _cartRepository.GetAllCarts(userId).FirstOrDefault(c => c.LampId == lampId && c.Type == type);
             if (existingCart != null)
             {
                 existingCart.Amount += amount;
                 return _cartRepository.UpdateCart(existingCart);
             }
 
-            var cart = new Cart { Id = id, Amount = amount, LampId = lampId, Type = type };
+            var cart = new Cart { Id = id, Amount = amount, LampId = lampId, Type = type, UserId = userId};
             return _cartRepository.CreateCart(cart);
         }
 

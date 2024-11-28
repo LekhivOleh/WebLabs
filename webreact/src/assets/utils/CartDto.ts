@@ -3,4 +3,5 @@ export interface CartDTO {
     lampId: string;
     amount: number;
     type: string;
+    userId: string;
 }
